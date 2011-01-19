@@ -129,7 +129,7 @@
 
 /* Begin PBXFileReference section */
 		162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "arakawaVison-Info.plist"; sourceTree = "<group>"; };
-		162EA01A12E6FA2F006B1339 /* ofxKinectUniversal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofxKinectUniversal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		162EA01A12E6FA2F006B1339 /* ArakawaVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArakawaVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		1672EE5712DE5B6400FBC6E6 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		1672EE5C12DE5B6400FBC6E6 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
@@ -978,7 +978,7 @@
 				E44665C70F5B3E03005D0BF0 /* addons */,
 				E45BE0360E8CC5DE009D7055 /* libs */,
 				162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */,
-				162EA01A12E6FA2F006B1339 /* ofxKinectUniversal.app */,
+				162EA01A12E6FA2F006B1339 /* ArakawaVision.app */,
 				162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */,
 			);
 			sourceTree = "<group>";
@@ -1122,7 +1122,7 @@
 			);
 			name = arakawaVision;
 			productName = myOFApp;
-			productReference = 162EA01A12E6FA2F006B1339 /* ofxKinectUniversal.app */;
+			productReference = 162EA01A12E6FA2F006B1339 /* ArakawaVision.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1324,7 +1324,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				PRODUCT_NAME = ofxKinectDebug;
+				PRODUCT_NAME = ArakawaVisionDebug;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1390,7 +1390,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
-				PRODUCT_NAME = ofxKinect;
+				PRODUCT_NAME = ArakawaVision;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1455,7 +1455,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
-				PRODUCT_NAME = ofxKinectUniversal;
+				PRODUCT_NAME = ArakawaVisionUniversal;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
