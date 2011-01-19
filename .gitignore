@@ -1,0 +1,5 @@
+bin/*.app
+build/*.build
+.DS_Store
+*.swp
+*.jpg
