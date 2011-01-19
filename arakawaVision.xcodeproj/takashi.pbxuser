@@ -1,19 +1,5 @@
 // !$*UTF8*$!
 {
-	162E9FA512E6F98E006B1339 /* Untitled-Info.plist */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = text.plist.xml;
-		name = "Untitled-Info.plist";
-		path = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/Untitled-Info.plist";
-		sourceTree = "<absolute>";
-	};
-	162E9FB012E6F9BD006B1339 /* Untitled2-Info.plist */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = text.plist.xml;
-		name = "Untitled2-Info.plist";
-		path = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/Untitled2-Info.plist";
-		sourceTree = "<absolute>";
-	};
 	162E9FB712E6FA2F006B1339 /* arakawaVision */ = {
 		activeExec = 0;
 		executables = (
@@ -50,7 +36,11 @@
 		sourceDirectories = (
 		);
 	};
-	162EA04912E6FAF7006B1339 /* PlistBookmark */ = {
+	1636971412E705BC0060BB6E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+	};
+	1636971512E705BC0060BB6E /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
 		fallbackIsa = PBXBookmark;
@@ -59,22 +49,7 @@
 		);
 		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
-	162EA04A12E6FAF7006B1339 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-	};
-	162EA04B12E6FAF7006B1339 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info copy.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
+		rLoc = 9223372036854775807;
 	};
 	16484D3312D1A0C300E4452B /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -159,16 +134,6 @@
 		rType = 0;
 		vrLen = 257;
 		vrLoc = 0;
-	};
-	1666BE4112E6F54E0002DA43 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E4B69E1E0A3A1BDC003C02F2 /* arakawaVision.cpp */;
-		name = "arakawaVision.cpp: 197";
-		rLen = 0;
-		rLoc = 5373;
-		rType = 0;
-		vrLen = 1284;
-		vrLoc = 4506;
 	};
 	1672E9B512DCB06700FBC6E6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -535,16 +500,6 @@
 		vrLen = 668;
 		vrLoc = 0;
 	};
-	1672F72512E1577500FBC6E6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */;
-		name = "main.cpp: 10";
-		rLen = 0;
-		rLoc = 276;
-		rType = 0;
-		vrLen = 425;
-		vrLoc = 0;
-	};
 	1672F72612E1577500FBC6E6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 16E0DAEC12DB819F007443F2 /* HandParticle.cpp */;
@@ -554,16 +509,6 @@
 		rType = 0;
 		vrLen = 794;
 		vrLoc = 0;
-	};
-	1677D10612E2B674009B9D64 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E4B69E1F0A3A1BDC003C02F2 /* arakawaVision.h */;
-		name = "arakawaVision.h: 36";
-		rLen = 9;
-		rLoc = 665;
-		rType = 0;
-		vrLen = 626;
-		vrLoc = 1139;
 	};
 	16AECC1612E6F66700D4588C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -575,127 +520,6 @@
 		vrLen = 1238;
 		vrLoc = 0;
 	};
-	16B7C4A012E6FD2C001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/arakawaVison-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4A112E6FD2C001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162E9FA512E6F98E006B1339 /* Untitled-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/Untitled-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4A212E6FD2C001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162E9FB012E6F9BD006B1339 /* Untitled2-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/Untitled2-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4A312E6FD2C001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4A412E6FD2C001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info copy.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4A512E6FD2C001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info copy.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4AC12E6FD53001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info copy.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4D012E6FDC2001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info copy.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4D112E6FDC2001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/arakawaVison-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4D212E6FDC2001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/arakawaVison-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C4E012E6FDD7001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/arakawaVison-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
 	16B7C50012E6FE3F001E83B1 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */;
@@ -705,51 +529,7 @@
 		);
 		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/arakawaVison-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C50112E6FE3F001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 162EA01C12E6FA2F006B1339 /* openFrameworks-Info copy.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info copy.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C50212E6FE3F001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C50712E6FEAE001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	16B7C50812E6FEAE001E83B1 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	16E0DAEB12DB819F007443F2 /* HandParticle.h */ = {
 		uiCtxt = {
@@ -1023,13 +803,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 317127940;
-			PBXWorkspaceStateSaveDate = 317127940;
+			PBXPerProjectTemplateStateSaveDate = 317130167;
+			PBXWorkspaceStateSaveDate = 317130167;
 		};
 		perUserProjectItems = {
-			162EA04912E6FAF7006B1339 = 162EA04912E6FAF7006B1339 /* PlistBookmark */;
-			162EA04A12E6FAF7006B1339 = 162EA04A12E6FAF7006B1339 /* PBXBookmark */;
-			162EA04B12E6FAF7006B1339 = 162EA04B12E6FAF7006B1339 /* PlistBookmark */;
+			1636971412E705BC0060BB6E /* PBXBookmark */ = 1636971412E705BC0060BB6E /* PBXBookmark */;
+			1636971512E705BC0060BB6E /* PlistBookmark */ = 1636971512E705BC0060BB6E /* PlistBookmark */;
 			16484D6412D1C77300E4452B = 16484D6412D1C77300E4452B /* PBXTextBookmark */;
 			16484D6512D1C77300E4452B = 16484D6512D1C77300E4452B /* PBXTextBookmark */;
 			16484D6612D1C77300E4452B = 16484D6612D1C77300E4452B /* PBXTextBookmark */;
@@ -1037,7 +816,6 @@
 			16484D6812D1C77300E4452B = 16484D6812D1C77300E4452B /* PBXTextBookmark */;
 			16484D6912D1C77300E4452B = 16484D6912D1C77300E4452B /* PBXTextBookmark */;
 			16484D6A12D1C77300E4452B = 16484D6A12D1C77300E4452B /* PBXTextBookmark */;
-			1666BE4112E6F54E0002DA43 = 1666BE4112E6F54E0002DA43 /* PBXTextBookmark */;
 			1672E9B512DCB06700FBC6E6 = 1672E9B512DCB06700FBC6E6 /* PBXTextBookmark */;
 			1672EC8312DDFCB800FBC6E6 = 1672EC8312DDFCB800FBC6E6 /* PBXTextBookmark */;
 			1672EC8412DDFCB800FBC6E6 = 1672EC8412DDFCB800FBC6E6 /* PBXTextBookmark */;
@@ -1063,26 +841,9 @@
 			1672F65512E0D7D500FBC6E6 = 1672F65512E0D7D500FBC6E6 /* PBXTextBookmark */;
 			1672F72312E1577500FBC6E6 = 1672F72312E1577500FBC6E6 /* PBXTextBookmark */;
 			1672F72412E1577500FBC6E6 = 1672F72412E1577500FBC6E6 /* PBXTextBookmark */;
-			1672F72512E1577500FBC6E6 = 1672F72512E1577500FBC6E6 /* PBXTextBookmark */;
 			1672F72612E1577500FBC6E6 = 1672F72612E1577500FBC6E6 /* PBXTextBookmark */;
-			1677D10612E2B674009B9D64 = 1677D10612E2B674009B9D64 /* PBXTextBookmark */;
 			16AECC1612E6F66700D4588C = 16AECC1612E6F66700D4588C /* PBXTextBookmark */;
-			16B7C4A012E6FD2C001E83B1 /* PlistBookmark */ = 16B7C4A012E6FD2C001E83B1 /* PlistBookmark */;
-			16B7C4A112E6FD2C001E83B1 /* PlistBookmark */ = 16B7C4A112E6FD2C001E83B1 /* PlistBookmark */;
-			16B7C4A212E6FD2C001E83B1 /* PlistBookmark */ = 16B7C4A212E6FD2C001E83B1 /* PlistBookmark */;
-			16B7C4A312E6FD2C001E83B1 /* PlistBookmark */ = 16B7C4A312E6FD2C001E83B1 /* PlistBookmark */;
-			16B7C4A412E6FD2C001E83B1 /* PlistBookmark */ = 16B7C4A412E6FD2C001E83B1 /* PlistBookmark */;
-			16B7C4A512E6FD2C001E83B1 /* PlistBookmark */ = 16B7C4A512E6FD2C001E83B1 /* PlistBookmark */;
-			16B7C4AC12E6FD53001E83B1 /* PlistBookmark */ = 16B7C4AC12E6FD53001E83B1 /* PlistBookmark */;
-			16B7C4D012E6FDC2001E83B1 /* PlistBookmark */ = 16B7C4D012E6FDC2001E83B1 /* PlistBookmark */;
-			16B7C4D112E6FDC2001E83B1 /* PlistBookmark */ = 16B7C4D112E6FDC2001E83B1 /* PlistBookmark */;
-			16B7C4D212E6FDC2001E83B1 /* PlistBookmark */ = 16B7C4D212E6FDC2001E83B1 /* PlistBookmark */;
-			16B7C4E012E6FDD7001E83B1 /* PlistBookmark */ = 16B7C4E012E6FDD7001E83B1 /* PlistBookmark */;
-			16B7C50012E6FE3F001E83B1 /* PlistBookmark */ = 16B7C50012E6FE3F001E83B1 /* PlistBookmark */;
-			16B7C50112E6FE3F001E83B1 /* PlistBookmark */ = 16B7C50112E6FE3F001E83B1 /* PlistBookmark */;
-			16B7C50212E6FE3F001E83B1 /* PlistBookmark */ = 16B7C50212E6FE3F001E83B1 /* PlistBookmark */;
-			16B7C50712E6FEAE001E83B1 /* PlistBookmark */ = 16B7C50712E6FEAE001E83B1 /* PlistBookmark */;
-			16B7C50812E6FEAE001E83B1 /* PlistBookmark */ = 16B7C50812E6FEAE001E83B1 /* PlistBookmark */;
+			16B7C50012E6FE3F001E83B1 = 16B7C50012E6FE3F001E83B1 /* PlistBookmark */;
 		};
 		sourceControlManager = 16484D3312D1A0C300E4452B /* Source Control */;
 		userBuildSettings = {
@@ -1111,6 +872,14 @@
 			sepNavVisRange = "{1139, 626}";
 			sepNavWindowFrame = "{{47, 64}, {712, 574}}";
 		};
+	};
+	E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {
+		isa = PBXFileReference;
+		fileEncoding = 30;
+		lastKnownFileType = text.plist.xml;
+		name = "openFrameworks-Info.plist";
+		path = "/Users/takashi/dev/lib/openFrameworks/apps/myApps/arakawaVision/openFrameworks-Info.plist";
+		sourceTree = "<absolute>";
 	};
 	E4F055F91293A22200BAAF7C /* install.xml */ = {
 		uiCtxt = {
