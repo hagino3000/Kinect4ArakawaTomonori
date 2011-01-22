@@ -14,6 +14,10 @@ void arakawaVision::setup() {
     //kinect.setVerbose(true);
     kinect.open();
     kinect.setCameraTiltAngle(angle);
+	
+	std::cout << "Kinect width" + ofToString(kinect.width) <<endl;
+	std::cout << "Kinect height" + ofToString(kinect.height) <<endl;
+
 
     // Setup ofScreen
     ofSetFullscreen(true);
@@ -29,10 +33,12 @@ void arakawaVision::setup() {
     grayThresh.allocate(kinect.width, kinect.height);
     grayThreshFar.allocate(kinect.width, kinect.height);
 
-    // For hand detection
-    nearThreshold = 125;
-    farThreshold  = 165;	
-    nearDistance = 80;
+    // For hand detection (0 to 255) 0 is far, 255 is close
+	nearThreshold = 25;
+	farThreshold = 85;
+    //nearThreshold = 170;
+    //farThreshold  = 230;
+    nearDistance = 75;
 
     // For box2d
     box2d.init();
@@ -41,14 +47,20 @@ void arakawaVision::setup() {
     box2d.setFPS(15);
 
     // Fonts
-    fontOratorStd.loadFont("Courier New.ttf",14, true, true);
-    fontOratorStd.setLineHeight(20.0f);
+    msgFont.loadFont("Courier New.ttf",14, true, true);
+    msgFont.setLineHeight(20.0f);
+	
+	// soudns
+	soundPlayer = new SoundPlayer();
+	soundPlayer->play();
 
 
     drawPointCloudSize = 0.0f;
     backgroundPosition = 0;
 
     frameCount = 0;
+	detectingTime = 0;
+	hasHuman = false;
 
     ofxBox2dCircle *c = new ofxBox2dCircle();
     c->setPhysics(1, 1, 1);
@@ -57,28 +69,43 @@ void arakawaVision::setup() {
 
 //--------------------------------------------------------------
 void arakawaVision::update() {
-    if (++frameCount > 100000) {
-        frameCount = 0;
-    }
+	frameCount++;
 
-
+	/*
+	if (frameCount == 500) {
+		memset(0, 0x00, 0xFF);
+	}
+	*/
     kinect.update();
     box2d.update();
-
+	soundPlayer->update();
 
     grayImage.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
     checkDepthUpdated(grayImage);
 
+	// 二値化
     unsigned char * pix = grayImage.getPixels();
-    int numPixels = grayImage.getWidth() * grayImage.getHeight();
+	int width = grayImage.getWidth();
+	int height = grayImage.getHeight();
+    int numPixels = width * height;
+	int maxThreshold = 255 - nearThreshold;
+	int minThreshold = 255 - farThreshold;
 
-    for(int i = 0; i < numPixels; i++){
-        if( pix[i] > nearThreshold && pix[i] < farThreshold ){
-            pix[i] = 255;
-        }else{
-            pix[i] = 0;
-        }
-    }
+	for (int x = 0; x < width; x++) {
+		for (int y = 0; y < height; y++) {
+			int i = y * width + x;
+			int adjust = 0;
+			// kusigahamaの腹を検出するのを避ける
+			if (240 < x && x < 400 && y > 250) {
+				adjust = (80 - abs(320 - x))/6;
+			}
+			if( pix[i] > minThreshold + adjust && pix[i] < maxThreshold ){
+				pix[i] = 255; // white
+			}else{
+				pix[i] = 0; // black
+			}			
+		}
+	}
 
     //update the cv image
     grayImage.flagImageChanged();
@@ -100,7 +127,7 @@ void arakawaVision::update() {
         circles.push_back(new HandParticle(ofPoint(centerX, centerY), ofRandom(0.5, 6.0), 0.4, 0.1, 10, true));
         createBox2dObjects(ofRandom(centerX-30, centerX+30), 20);
 
-        for (int i = 0; i < contourFinder.blobs[j].nPts; i+=8){
+        for (int i = 0; i < contourFinder.blobs[j].nPts; i+=5){
             ofxBox2dCircle *p = new ofxBox2dCircle();
             p->setup(box2d.getWorld(), contourFinder.blobs[j].pts[i].x, contourFinder.blobs[j].pts[i].y, 5, true);
             p->setPhysics(1.0, 0.9, 0.7);
@@ -135,11 +162,56 @@ void arakawaVision::update() {
 
     if (contourFinder.nBlobs > 0) {
         drawPointCloudSize = min(drawPointCloudSize+0.3f, 7.0f);
+		detectingTime = min(++detectingTime, 60);
     } else {
         drawPointCloudSize = max(drawPointCloudSize-0.2f, 0.0f);
+		detectingTime = max(--detectingTime, 0);
+		checkHuman();
     }
+	
+	if (detectingTime == 60) {
+		soundPlayer->playDetecting();
+	}
+	if (detectingTime == 0) {
+		soundPlayer->stopDetecting();
+	}
 
-
+}
+void arakawaVision::checkHuman() {
+	if (detectingTime > 0 && frameCount%2 == 2) {
+		return;
+	}
+	
+	int detSize = 0;
+	
+	int w = kinect.width;
+    int h = kinect.height;
+    int distanceRange = 100;
+    int step = 5;
+		
+    for (int i = 0; i < w; i+=step) {
+        for (int j = 0; j < h; j+=step) {
+            int distance = kinect.getDistanceAt(i, j);
+            if (nearDistance < distance && distance < nearDistance+distanceRange) {
+				float size = distanceRange - (distance - nearDistance);
+                if(size < 15) {
+					detSize++;
+                }
+            }
+        }
+    }
+	
+	if (detSize > 150) {
+		soundPlayer->playNotify();
+		hasHuman = true;
+	}
+	if (hasHuman && detSize < 20) {
+		hasHuman = false;
+		soundPlayer->stopNotify();
+	}
+		
+	//std::cout << ofToString(detSize) << endl;
+	
 }
 
 void arakawaVision::createBox2dObjects(float x, float y) {
@@ -189,11 +261,11 @@ void arakawaVision::draw() {
         ofDrawBitmapString("tilt angle: " + ofToString(angle),20,ofGetHeight()-15);
     }
 
-    fontOratorStd.drawString("accel is: " + ofToString(kinect.getMksAccel().x, 2) + " / " 
+    msgFont.drawString("accel is: " + ofToString(kinect.getMksAccel().x, 2) + " / " 
             + ofToString(kinect.getMksAccel().y, 2) + " / "
             + ofToString(kinect.getMksAccel().z, 2), 20, ofGetHeight()-60);
-    fontOratorStd.drawString("fps: "+ ofToString(ofGetFrameRate()), 20, ofGetHeight()-40);
-    fontOratorStd.drawString("All your base is belong to Arakawa Tomonori....", 20, ofGetHeight()-80);
+    msgFont.drawString("fps: "+ ofToString(ofGetFrameRate()), 20, ofGetHeight()-40);
+    msgFont.drawString("All your base is belong to Arakawa Tomonori....", 20, ofGetHeight()-80);
 
 
 
@@ -217,13 +289,9 @@ void arakawaVision::draw() {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
-    drawBox2dObjects();
-    if (contourFinder.nBlobs > 0) {
-        drawHands();
-    }
+	drawHands();
+	drawBox2dObjects();
     drawPointCloud();
-
-
 }
 
 void arakawaVision::drawHandCircle(){
@@ -293,37 +361,40 @@ void arakawaVision::drawBackground(){
 }
 
 void arakawaVision::drawHands() {
+	
+	if (detectingTime == 0) {
+		return;
+	}
     ofPushMatrix();	
 
-    drawHandCircle();
+    //drawHandCircle();
 
     ofFill();
     int w = kinect.width;
     int h = kinect.height;
-    int distanceRange = 60;
+    int distanceRange = 100;
     int step = 4;
     for (int i = 0; i < w; i+=step) {
         for (int j = 0; j < h; j+=step) {
             int distance = kinect.getDistanceAt(i, j);
             if (nearDistance < distance && distance < nearDistance+distanceRange) {
                 float size = distanceRange - (distance - nearDistance);
-                if (size > 40){
+                if (size > 45){
                     ofSetColor(130+size, 130+size, 255, 70+size);
                     ofCircle(w-i, j, 1.6);
-                } else if(size > 25){
+                } else if(size > 30){
                     ofSetColor(150, 150, 255, 100);
                     ofCircle(w-i, j, 1.3);
-                } else if(size > 10) {
-                    ofSetColor(100, 100, 255, 90);
-                    ofCircle(w-i, j, 1.1);					
+                } else if(size > 15) {
+                    ofSetColor(100, 100, 255, 100);
+                    ofCircle(w-i, j, 1.1);
                 } else {
-                    ofSetColor(50, 50, 255, 80);
+                    ofSetColor(50, 50, 255, 100);
                     ofCircle(w-i, j, 0.9);
                 }
             }			
         }
     }	
-
     ofPopMatrix();
 
 
@@ -336,7 +407,6 @@ void arakawaVision::drawHands() {
     }
 
     ofPopMatrix();
-
 }
 
 void arakawaVision::drawPointCloud() {
@@ -363,11 +433,11 @@ void arakawaVision::drawPointCloud() {
 }
 
 void arakawaVision::checkDepthUpdated(ofxCvGrayscaleImage newGrayImage){
-    if (frameCount % 200 == 0) {
+    if (frameCount % 500 == 0) {
         std::cout << "checkDepthUpdated" << endl;
         unsigned char * nextDepth = kinect.getDepthPixels();
 
-        if (frameCount != 200) {
+        if (frameCount != 500) {
             std::cout << "Start compare depth" << endl;
             unsigned char * currentDepthPixels = checkGrayImage.getPixels();
 

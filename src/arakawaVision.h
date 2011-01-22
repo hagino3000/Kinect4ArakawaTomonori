@@ -4,6 +4,7 @@
 #include "ofMain.h"
 #include "HandParticle.h"
 #include "BgEffect.h"
+#include "SoundPlayer.h"
 
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
@@ -34,6 +35,8 @@ class arakawaVision : public ofBaseApp
         void windowResized(int w, int h);
 
         void checkDepthUpdated(ofxCvGrayscaleImage newGrayImage);
+		void checkHuman();
+	
         void drawPointCloud();
         void drawHands();
         void drawHandCircle();
@@ -79,15 +82,18 @@ class arakawaVision : public ofBaseApp
         ofxBox2d box2d;
         vector <ofxBox2dCircle *> box2dCircles;
         vector <ofxBox2dRect *> box2dRects;
-        bool drawing;
-        ofPoint drawStart;
-        int shape; // 0:circle, 1:rect
 
 
         // fonts
-        ofTrueTypeFont		fontOratorStd;
+        ofTrueTypeFont		msgFont;
+	
+		// sounds
+		SoundPlayer *			soundPlayer;
+	
         // for timer
         int					frameCount;
+		int					detectingTime;
+		bool				hasHuman;
 };
 
 #endif
