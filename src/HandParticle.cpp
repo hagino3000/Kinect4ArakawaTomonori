@@ -1,8 +1,5 @@
 /*
  *  HandParticle.cpp
- *  arakawa1
- *
- *  
  */
 
 // From particle sample of http://yoppa.org

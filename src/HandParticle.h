@@ -1,12 +1,8 @@
 /*
  *  HandParticle.h
- *  arakawa1
- *
- *  Created by Takashi on 11/01/11.
- *  Copyright 2011 __MyCompanyName__. All rights reserved.
- *
  */
 
+// From particle sample of http://yoppa.org
 #ifndef _MY_CIRCLE
 #define _MY_CIRCLE
 
