@@ -2,11 +2,10 @@
  *  HandParticle.cpp
  *  arakawa1
  *
- *  Created by Takashi on 11/01/11.
- *  Copyright 2011 __MyCompanyName__. All rights reserved.
- *
+ *  
  */
 
+// From particle sample of http://yoppa.org
 #include "HandParticle.h"
 
 HandParticle::HandParticle(ofPoint _pos, float _radius, float _maxSpeed, float _phaseSpeed, float _lifeLength, bool _positionFluctuation) {
