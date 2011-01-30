@@ -8,6 +8,10 @@ Demo
 See on Youtube
   http://www.youtube.com/watch?v=jt69ilMVN-c
 
+Screen shot
+  .. image:: http://hagino3k.appspot.com/img/arakawa/sc2.png
+  
+
 How to build
 ------------
 This application tested on MacOSX only.
@@ -38,4 +42,6 @@ Open Project by xcode
   
 Contact
 -------
-Twitter `@hagino3000<http://twitter.com/hagino3000>`_
+Twitter @hagino3000_
+
+.. _@hagino3000: http://twitter.com/hagino3000_
