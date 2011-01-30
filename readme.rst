@@ -10,7 +10,7 @@ See on Youtube
 
 Screen shot
   .. image:: http://hagino3k.appspot.com/img/arakawa/sc1.png
-     :scale : 50%
+     :scale: 50%
   
 
 How to build
