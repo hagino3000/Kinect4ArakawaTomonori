@@ -9,7 +9,7 @@ See on Youtube
   http://www.youtube.com/watch?v=jt69ilMVN-c
 
 Screen shot
-  .. image:: http://hagino3k.appspot.com/img/arakawa/sc1.png
+  .. image:: http://hagino3k.appspot.com/img/arakawa/sc3.png
      :scale: 50%
   
 
