@@ -9,7 +9,8 @@ See on Youtube
   http://www.youtube.com/watch?v=jt69ilMVN-c
 
 Screen shot
-  .. image:: http://hagino3k.appspot.com/img/arakawa/sc2.png
+  .. image:: http://hagino3k.appspot.com/img/arakawa/sc1.png
+     :scale : 50%
   
 
 How to build
@@ -18,11 +19,12 @@ This application tested on MacOSX only.
 
 Get a Kinect
 
-  Buy it!!
+1. Buy it!!
+2. Connect your mac with USB connector.
 
 Get OpenFrameworks
 
-	git clone git://github.com/openframeworks/openFrameworks.git
+1. git clone git://github.com/openframeworks/openFrameworks.git
 
 Deploy this source
 
@@ -42,6 +44,6 @@ Open Project by xcode
   
 Contact
 -------
-Twitter @hagino3000_
+Twitter `@hagino3000`__
 
-.. _@hagino3000: http://twitter.com/hagino3000_
+__ http://twitter.com/hagino3000
