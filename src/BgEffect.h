@@ -34,7 +34,6 @@ public:
 	
 private:
     //プロパティはprivateで宣言
-    //円の位置
     ofPoint startPos;
 	ofPoint endPos;
 	int length;

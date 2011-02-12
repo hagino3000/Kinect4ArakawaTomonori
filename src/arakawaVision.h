@@ -94,7 +94,6 @@ class arakawaVision : public ofBaseApp
 		SoundPlayer *			soundPlayer;
 	
         // for timer
-        int					frameCount;
 		int					detectingTime;
 		bool				hasHuman;
 };

@@ -61,7 +61,6 @@ void arakawaVision::setup() {
     drawPointCloudSize = 0.0f;
     backgroundPosition = 0;
 
-    frameCount = 0;
 	detectingTime = 0;
 	hasHuman = false;
 
@@ -87,7 +86,6 @@ void arakawaVision::setup() {
 
 //--------------------------------------------------------------
 void arakawaVision::update() {
-	frameCount++;
 
     kinect.update();
     box2d.update();
@@ -180,7 +178,7 @@ void arakawaVision::update() {
 
 }
 void arakawaVision::checkHuman() {
-	if (detectingTime > 0 && frameCount%2 == 2) {
+	if (detectingTime > 0 && ofGetFrameNum()%2 == 2) {
 		return;
 	}
 	
@@ -215,7 +213,7 @@ void arakawaVision::checkHuman() {
 }
 
 void arakawaVision::createBox2dObjects(float x, float y) {
-    if (frameCount % 4 == 0) {
+    if (ofGetFrameNum() % 4 == 0) {
         ofxBox2dCircle *c = new ofxBox2dCircle();
         c->setPhysics(2, 0.8, 2);
         c->setup(box2d.getWorld(), x, y, ofRandom(3, 14));
@@ -224,7 +222,7 @@ void arakawaVision::createBox2dObjects(float x, float y) {
             box2dCircles.at(0)->destroyShape();
             box2dCircles.erase(box2dCircles.begin());
         }
-    } else if (frameCount % 5 == 0) {
+    } else if (ofGetFrameNum() % 5 == 0) {
         int size = ofRandom(5, 20);
         ofxBox2dRect *c = new ofxBox2dRect();
         c->setPhysics(2, 0.8, 10);
@@ -344,10 +342,10 @@ void arakawaVision::drawBackground(){
     ofTranslate(0, -backgroundPosition, 0);
     ofSetColor(255, 255, 255, 60);
 
-    if (frameCount%7 == 0) {
+    if (ofGetFrameNum()%7 == 0) {
         int dist = ofRandom(1, gridColNum);
         bgEffects.push_back(new BgEffect(1, winWidth/gridColNum*dist));
-    } else if (frameCount%11 == 0) {
+    } else if (ofGetFrameNum()%11 == 0) {
         int dist = ofRandom(1, gridRowNum);
         bgEffects.push_back(new BgEffect(0, winHeight/gridRowNum*dist));
     }
@@ -430,11 +428,11 @@ void arakawaVision::drawPointCloud() {
  * If not updated, close and reopen the Kinect.
  */
 void arakawaVision::checkDepthUpdated(){
-    if (frameCount % 300 == 0) {
+    if (ofGetFrameNum() % 300 == 0) {
         std::cout << "checkDepthUpdated" << endl;
         unsigned char * nextDepth = kinect.getDepthPixels();
 
-        if (frameCount != 300) {
+        if (ofGetFrameNum() != 300) {
             std::cout << "Start compare depth" << endl;
 			unsigned char * currentDepthPixels = checkGrayImage.getPixels();
 			
