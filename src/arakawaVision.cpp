@@ -1,10 +1,15 @@
 #include "arakawaVision.h"
 
+float getNearDistance(int nearDepth) {
+	return 25 + nearDepth * 1.7;
+}
+int box2;
 
 //--------------------------------------------------------------
 void arakawaVision::setup() {
     std::cout << "Start setup()"<<endl;
 
+	sceneNum = 0;
     debug = false;
 
     // Setup Kinect
@@ -20,7 +25,7 @@ void arakawaVision::setup() {
 
 
     // Setup ofScreen
-    ofSetFullscreen(true);
+    //ofSetFullscreen(true);
     ofSetFrameRate(30);
     ofSetVerticalSync(true);
     ofSetCircleResolution(64);	
@@ -33,12 +38,10 @@ void arakawaVision::setup() {
     grayThresh.allocate(kinect.width, kinect.height);
     grayThreshFar.allocate(kinect.width, kinect.height);
 
-    // For hand detection (0 to 255) 0 is far, 255 is close
+    // For hand detection (0 to 255) 255 is far, 0 is close
 	nearThreshold = 25;
 	farThreshold = 85;
-    //nearThreshold = 170;
-    //farThreshold  = 230;
-    nearDistance = 75;
+    nearDistance = getNearDistance(nearThreshold);
 
     // For box2d
     box2d.init();
@@ -65,23 +68,33 @@ void arakawaVision::setup() {
     ofxBox2dCircle *c = new ofxBox2dCircle();
     c->setPhysics(1, 1, 1);
     c->setup(box2d.getWorld(), 400, 400, 1);
+	
+	/// setup config gui
+	gui.setup();
+	gui.config->gridSize.x = 300;
+	gui.addTitle("KINECT SETTINGS");
+	gui.addSlider("Tilt Angle", angle, -30, 30);
+	gui.addTitle("DEPTH SETTINGS");
+	gui.addSlider("Near Distance", nearThreshold, 20, 120);
+	gui.addSlider("Far Distance", farThreshold, 50, 150);
+	string titleArray[] = {"Lame", "Alright", "Better", "Best"};
+	gui.addComboBox("box2", box2, 3,  titleArray);
+	
+	//gui.loadFromXML();
+	gui.setDefaultKeys(true);
+	gui.show();
 }
 
 //--------------------------------------------------------------
 void arakawaVision::update() {
 	frameCount++;
 
-	/*
-	if (frameCount == 500) {
-		memset(0, 0x00, 0xFF);
-	}
-	*/
     kinect.update();
     box2d.update();
 	soundPlayer->update();
 
     grayImage.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
-    checkDepthUpdated(grayImage);
+	checkDepthUpdated();
 
 	// 二値化
     unsigned char * pix = grayImage.getPixels();
@@ -113,7 +126,7 @@ void arakawaVision::update() {
 
     // find contours which are between the size of 20 pixels and 1/3 the w*h pixels.
     // also, find holes is set to true so we will get interior contours as well....
-    contourFinder.findContours(grayImage, 250, (kinect.width*kinect.height)/4, 3, false);
+    contourFinder.findContours(grayImage, 250, (kinect.width*kinect.height)/3, 3, false);
 
 
     for (int i=0; i<contorParticles.size(); i++) {
@@ -124,7 +137,6 @@ void arakawaVision::update() {
     for (int j = 0; j < contourFinder.nBlobs; j++){
         float centerX = contourFinder.blobs[j].centroid.x;
         float centerY = contourFinder.blobs[j].centroid.y;
-        circles.push_back(new HandParticle(ofPoint(centerX, centerY), ofRandom(0.5, 6.0), 0.4, 0.1, 10, true));
         createBox2dObjects(ofRandom(centerX-30, centerX+30), 20);
 
         for (int i = 0; i < contourFinder.blobs[j].nPts; i+=5){
@@ -136,16 +148,6 @@ void arakawaVision::update() {
 
     }
 
-    //パーティクル更新
-    for(vector <HandParticle *>::iterator it = circles.begin(); it != circles.end();){
-        (*it)->update();
-        if ((*it)->dead) {
-            delete (*it);
-            it = circles.erase(it);
-        } else {
-            ++it;
-        }
-    }
 
     // 背景更新
     backgroundPosition = backgroundPosition+0.2;
@@ -209,9 +211,7 @@ void arakawaVision::checkHuman() {
 		hasHuman = false;
 		soundPlayer->stopNotify();
 	}
-		
-	//std::cout << ofToString(detSize) << endl;
-	
+			
 }
 
 void arakawaVision::createBox2dObjects(float x, float y) {
@@ -244,34 +244,39 @@ void arakawaVision::draw() {
     drawBackground();
 
     ofSetColor(255, 255, 255);
-    //kinect.drawDepth(10, 10, 400, 300);
-    //kinect.drawDepth(10, 10, 160, 120);
+	
+	if (sceneNum == 0) {
+		drawTitleScene();
+	} else {
+		drawPlayScene();
+	}
+}
 
-
+void arakawaVision::drawPlayScene() {
     if (debug) {
         grayImage.draw(10, 10, 360, 270);
         kinect.draw(380, 10, 360, 270);
         ofSetColor(255, 255, 255);
         ofNoFill();
         ofRect(10, 10, 360, 270);
-
+		
         char reportStr[1024];
         sprintf(reportStr, "set near threshold %i, set far threshold %i, num blobs found %i",nearThreshold, farThreshold, contourFinder.nBlobs);
         ofDrawBitmapString(reportStr, 20, ofGetHeight()-30);
         ofDrawBitmapString("tilt angle: " + ofToString(angle),20,ofGetHeight()-15);
     }
-
+	
     msgFont.drawString("accel is: " + ofToString(kinect.getMksAccel().x, 2) + " / " 
-            + ofToString(kinect.getMksAccel().y, 2) + " / "
-            + ofToString(kinect.getMksAccel().z, 2), 20, ofGetHeight()-60);
+					   + ofToString(kinect.getMksAccel().y, 2) + " / "
+					   + ofToString(kinect.getMksAccel().z, 2), 20, ofGetHeight()-60);
     msgFont.drawString("fps: "+ ofToString(ofGetFrameRate()), 20, ofGetHeight()-40);
-    msgFont.drawString("All your base is belong to Arakawa Tomonori....", 20, ofGetHeight()-80);
-
-
-
+    //msgFont.drawString("All your base is belong to Arakawa Tomonori....", 20, ofGetHeight()-80);
+	
+	
+	
     glScalef((float)ofGetWidth() / (float)grayImage.width, (float)ofGetHeight() / (float)grayImage.height, 1.0f);
-
-
+	
+	
     if (debug) {
         for (int i = 0; i < contourFinder.nBlobs; i++){
             ofPushMatrix();
@@ -279,27 +284,29 @@ void arakawaVision::draw() {
             ofSetColor(255, 0, 0);
             ofFill();
             ofEllipse(contourFinder.blobs[i].centroid.x, contourFinder.blobs[i].centroid.y, 4, 4);
-
+			
             ofPopMatrix();
         }
-
+		
     }
     ofNoFill();
-
+	
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-
+	
 	drawHands();
 	drawBox2dObjects();
     drawPointCloud();
 }
 
-void arakawaVision::drawHandCircle(){
-    for (int i = 0; i < contourFinder.nBlobs; i++) {
-        ofSetColor(255, 255, 255);
-        ofNoFill();
-        ofCircle(contourFinder.blobs[i].centroid.x, contourFinder.blobs[i].centroid.y, 50);
-    }
+void arakawaVision::drawTitleScene() {
+	gui.draw();
+	
+	char reportStr[1024];
+	sprintf(reportStr, "set near threshold %i, set far threshold %i, num blobs found %i",nearThreshold, farThreshold, contourFinder.nBlobs);
+	ofDrawBitmapString(reportStr, 20, ofGetHeight()-30);
+	ofDrawBitmapString("tilt angle: " + ofToString(angle),20,ofGetHeight()-15);
+	
 }
 
 void arakawaVision::drawBox2dObjects(){
@@ -367,9 +374,8 @@ void arakawaVision::drawHands() {
 	}
     ofPushMatrix();	
 
-    //drawHandCircle();
-
     ofFill();
+	nearDistance = getNearDistance(nearThreshold);
     int w = kinect.width;
     int h = kinect.height;
     int distanceRange = 100;
@@ -379,18 +385,9 @@ void arakawaVision::drawHands() {
             int distance = kinect.getDistanceAt(i, j);
             if (nearDistance < distance && distance < nearDistance+distanceRange) {
                 float size = distanceRange - (distance - nearDistance);
-                if (size > 45){
-                    ofSetColor(130+size, 130+size, 255, 70+size);
-                    ofCircle(w-i, j, 1.6);
-                } else if(size > 30){
-                    ofSetColor(150, 150, 255, 100);
-                    ofCircle(w-i, j, 1.3);
-                } else if(size > 15) {
-                    ofSetColor(100, 100, 255, 100);
-                    ofCircle(w-i, j, 1.1);
-                } else {
-                    ofSetColor(50, 50, 255, 100);
-                    ofCircle(w-i, j, 0.9);
+                if (size > 0){
+                    ofSetColor(120+size, 120+size, 255, 70+size);
+                    ofCircle(w-i, j, min(0.9+(size/100), 1.5));
                 }
             }			
         }
@@ -400,11 +397,6 @@ void arakawaVision::drawHands() {
 
     ofNoFill();
     ofPushMatrix();
-
-    //パーティクルを表示
-    for(vector <HandParticle *>::iterator it = circles.begin(); it != circles.end(); ++it){
-        (*it)->draw();
-    }
 
     ofPopMatrix();
 }
@@ -432,31 +424,36 @@ void arakawaVision::drawPointCloud() {
     glEnd();
 }
 
-void arakawaVision::checkDepthUpdated(ofxCvGrayscaleImage newGrayImage){
-    if (frameCount % 500 == 0) {
+/**
+ * Check depth data is updated.
+ *
+ * If not updated, close and reopen the Kinect.
+ */
+void arakawaVision::checkDepthUpdated(){
+    if (frameCount % 300 == 0) {
         std::cout << "checkDepthUpdated" << endl;
         unsigned char * nextDepth = kinect.getDepthPixels();
 
-        if (frameCount != 500) {
+        if (frameCount != 300) {
             std::cout << "Start compare depth" << endl;
-            unsigned char * currentDepthPixels = checkGrayImage.getPixels();
-
-            int pixNum = kinect.width * kinect.height;
+			unsigned char * currentDepthPixels = checkGrayImage.getPixels();
+			
+		    int pixNum = kinect.width * kinect.height;
             for (int i=0; i<pixNum; i++) {
                 if (nextDepth[i] != currentDepthPixels[i]) {
                     break;
-                }
-                if (i > pixNum / 2) {
-                    std::cout << "Depth pixels did not updated!!" << endl;
-                    kinect.close();
-                    kinect.open();
-                    break;
-                }
-            }			
-
-        }
-        checkGrayImage.setFromPixels(nextDepth, kinect.width, kinect.height);
-    }
+				}
+				if (i > pixNum / 2) {
+					std::cout << "Depth pixels did not updated!!" << endl;
+					kinect.close();
+					kinect.open();
+					kinect.setCameraTiltAngle(angle);
+					break;
+				}
+			}                  
+		}
+		checkGrayImage.setFromPixels(nextDepth, kinect.width, kinect.height);
+	}
 }
 
 //--------------------------------------------------------------
@@ -499,14 +496,11 @@ void arakawaVision::keyPressed (int key)
             //フルスクリーンに
             ofToggleFullscreen();
             break;
-        case 'r':
-            // reboot kinect
-            kinect.close();
-            kinect.open();
-            break;
-        case 'c':
-            createBox2dObjects(mouseX, mouseY);
-            break;
+			
+		case ' ':
+			sceneNum = ++sceneNum%2;
+			kinect.setCameraTiltAngle(angle);
+			break;
 
         case OF_KEY_UP:
             angle++;

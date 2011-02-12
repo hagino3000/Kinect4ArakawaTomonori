@@ -2,13 +2,13 @@
 #define _TEST_APP
 
 #include "ofMain.h"
-#include "HandParticle.h"
 #include "BgEffect.h"
 #include "SoundPlayer.h"
 
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
 #include "ofxBox2d.h"
+#include "ofxSimpleGuiToo.h"
 
 #include <iostream>
 #include <sstream>
@@ -34,13 +34,15 @@ class arakawaVision : public ofBaseApp
         void mouseReleased(int x, int y, int button);
         void windowResized(int w, int h);
 
-        void checkDepthUpdated(ofxCvGrayscaleImage newGrayImage);
 		void checkHuman();
+		void checkDepthUpdated();
 	
         void drawPointCloud();
         void drawHands();
-        void drawHandCircle();
         void drawBackground();
+	
+		void drawTitleScene();
+		void drawPlayScene();
 
         void createBox2dObjects(float x, float y);
         void drawBox2dObjects();
@@ -58,6 +60,8 @@ class arakawaVision : public ofBaseApp
 
         ofxCvContourFinder 	contourFinder;
 
+		// mode controll
+		int					sceneNum; // 0:title, 1:play
         bool				showFullScreen;
         bool				debug;
 
@@ -67,7 +71,6 @@ class arakawaVision : public ofBaseApp
         int					nearDistance;
         int					farDistance;
 
-        vector <HandParticle *> circles;
         vector <ofxBox2dCircle *> contorParticles;
 
 
