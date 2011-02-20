@@ -4,6 +4,7 @@
 #include "ofMain.h"
 #include "BgEffect.h"
 #include "SoundPlayer.h"
+#include "CustomCircle.h"
 
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
@@ -51,25 +52,22 @@ class arakawaVision : public ofBaseApp
         ofxKinect kinect;
         int angle;
 
-        ofxCvColorImage		colorImage;
-        ofxCvGrayscaleImage		checkGrayImage;
-
+		ofxCvGrayscaleImage		binaryImage;
+		ofxCvColorImage			colorImage;
         ofxCvGrayscaleImage 	grayImage;
-        ofxCvGrayscaleImage 	grayThresh;
-        ofxCvGrayscaleImage 	grayThreshFar;
+		ofxCvGrayscaleImage		checkGrayImage;
 
         ofxCvContourFinder 	contourFinder;
 
 		// mode controll
 		int					sceneNum; // 0:title, 1:play
+		bool				useCameraImage;
         bool				showFullScreen;
         bool				debug;
 
         // for image
         int 				nearThreshold;
         int					farThreshold;
-        int					nearDistance;
-        int					farDistance;
 
         vector <ofxBox2dCircle *> contorParticles;
 

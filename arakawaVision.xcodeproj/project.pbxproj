@@ -27,6 +27,7 @@
 		161E641D12FE73B400D37ECE /* ofxSimpleGuiPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 161E640B12FE73B400D37ECE /* ofxSimpleGuiPage.cpp */; };
 		161E641E12FE73B400D37ECE /* ofxSimpleGuiToo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 161E640D12FE73B400D37ECE /* ofxSimpleGuiToo.cpp */; };
 		161E641F12FE73B400D37ECE /* ofxSimpleGuiValueControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 161E640F12FE73B400D37ECE /* ofxSimpleGuiValueControl.cpp */; };
+		1620B3B21311862F00E714AA /* CustomCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1620B3B11311862F00E714AA /* CustomCircle.cpp */; };
 		162E9FBB12E6FA2F006B1339 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		162E9FBC12E6FA2F006B1339 /* arakawaVision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* arakawaVision.cpp */; };
 		162E9FBD12E6FA2F006B1339 /* ofxThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 307525F311CA84AF007EB8FF /* ofxThread.cpp */; };
@@ -200,6 +201,9 @@
 		161E640E12FE73B400D37ECE /* ofxSimpleGuiToo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiToo.h; sourceTree = "<group>"; };
 		161E640F12FE73B400D37ECE /* ofxSimpleGuiValueControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSimpleGuiValueControl.cpp; sourceTree = "<group>"; };
 		161E641012FE73B400D37ECE /* ofxSimpleGuiValueControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiValueControl.h; sourceTree = "<group>"; };
+		1620B3B01311862F00E714AA /* CustomCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCircle.h; sourceTree = "<group>"; };
+		1620B3B11311862F00E714AA /* CustomCircle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomCircle.cpp; sourceTree = "<group>"; };
+		1620B50213119E2A00E714AA /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "arakawaVison-Info.plist"; sourceTree = "<group>"; };
 		162EA01A12E6FA2F006B1339 /* ArakawaVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArakawaVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
@@ -557,6 +561,14 @@
 				161E640512FE73B400D37ECE /* ofxSimpleGuiToggle.h */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		1620B4F113119DF800E714AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1620B50213119E2A00E714AA /* icon.icns */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		164519FB12E8AC79007053E1 /* ofxKinect */ = {
@@ -1165,6 +1177,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				1620B4F113119DF800E714AA /* Resources */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E44665C70F5B3E03005D0BF0 /* addons */,
@@ -1188,6 +1201,8 @@
 				1672F1DA12DF3C1E00FBC6E6 /* BgEffect.cpp */,
 				16451A5912E9C99C007053E1 /* SoundPlayer.h */,
 				16451A5A12E9C99C007053E1 /* SoundPlayer.cpp */,
+				1620B3B01311862F00E714AA /* CustomCircle.h */,
+				1620B3B11311862F00E714AA /* CustomCircle.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1465,6 +1480,7 @@
 				161E641D12FE73B400D37ECE /* ofxSimpleGuiPage.cpp in Sources */,
 				161E641E12FE73B400D37ECE /* ofxSimpleGuiToo.cpp in Sources */,
 				161E641F12FE73B400D37ECE /* ofxSimpleGuiValueControl.cpp in Sources */,
+				1620B3B21311862F00E714AA /* CustomCircle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
