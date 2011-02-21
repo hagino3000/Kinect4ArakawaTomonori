@@ -10,7 +10,7 @@
 #include "CustomCircle.h"
 
 void CustomCircle::setRandomColor() {
-	fillColor = ofColor(ofRandom(50, 255), ofRandom(50, 255), ofRandom(50, 255));	
+	fillColor = ofColor(ofRandom(0, 200), ofRandom(180, 255), ofRandom(150, 255));
 }
 
 void CustomCircle::draw() {
@@ -30,7 +30,7 @@ void CustomCircle::draw() {
 
 
 void CustomRect::setRandomColor() {
-	fillColor = ofColor(ofRandom(50, 255), ofRandom(50, 255), ofRandom(50, 255));	
+	fillColor = ofColor(ofRandom(150, 255), ofRandom(0, 200), ofRandom(200, 255));	
 }
 
 void CustomRect::draw() {
@@ -50,7 +50,7 @@ void CustomRect::draw() {
 	
 	
 	ofEnableAlphaBlending();
-	ofSetColor(fillColor, 150);
+	ofSetColor(fillColor, 180);
 	ofFill();
 	ofBeginShape();
 	for (int32 i = 0; i <count; i++) {

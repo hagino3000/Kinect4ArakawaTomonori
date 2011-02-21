@@ -3,8 +3,10 @@
 
 //--------------------------------------------------------------
 void arakawaVision::setup() {
-    std::cout << "Start setup()"<<endl;
+	//ofSetLogLevel(0);
+	ofLog(OF_LOG_VERBOSE, "Start setup()");
 
+	ofSetDataPathRoot("../Resources/");
 	sceneNum = 0;
     debug = false;
 	useCameraImage = false;
@@ -17,9 +19,8 @@ void arakawaVision::setup() {
     kinect.open();
     kinect.setCameraTiltAngle(angle);
 	
-	std::cout << "Kinect width" + ofToString(kinect.width) <<endl;
-	std::cout << "Kinect height" + ofToString(kinect.height) <<endl;
-
+	ofLog(OF_LOG_VERBOSE, "Kinect width" + ofToString(kinect.width));
+	ofLog(OF_LOG_VERBOSE, "Kinect height" + ofToString(kinect.height));
 
     // Setup ofScreen
     ofSetFrameRate(30);
@@ -201,7 +202,7 @@ void arakawaVision::createBox2dObjects(float x, float y) {
         c->setPhysics(2, 0.8, 2);
         c->setup(box2d.getWorld(), x, y, ofRandom(3, 14));
         box2dCircles.push_back(c);
-        if (box2dCircles.size() > 60) {
+        if (box2dCircles.size() > 70) {
             box2dCircles.at(0)->destroyShape();
             box2dCircles.erase(box2dCircles.begin());
         }
@@ -212,7 +213,7 @@ void arakawaVision::createBox2dObjects(float x, float y) {
         c->setPhysics(2, 0.8, 10);
         c->setup(box2d.getWorld(), x, y, size, size);
         box2dRects.push_back(c);
-        if (box2dRects.size() > 60) {
+        if (box2dRects.size() > 70) {
             box2dRects.at(0)->destroyShape();
             box2dRects.erase(box2dRects.begin());
         }
@@ -258,7 +259,7 @@ void arakawaVision::drawPlayScene() {
     ofNoFill();
 	
     glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+    //glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 	
 	if (!useCameraImage) {
 		drawHands();
@@ -403,11 +404,11 @@ void arakawaVision::drawPointCloud() {
  */
 void arakawaVision::checkDepthUpdated(){
     if (ofGetFrameNum() % 300 == 0) {
-        std::cout << "checkDepthUpdated" << endl;
+		ofLog(OF_LOG_VERBOSE, "checkDepthUpdated");
         unsigned char * nextDepth = kinect.getDepthPixels();
 
         if (ofGetFrameNum() != 300) {
-            std::cout << "Start compare depth" << endl;
+			ofLog(OF_LOG_VERBOSE, "Start compare depth");
 			unsigned char * currentDepthPixels = checkGrayImage.getPixels();
 			
 		    int pixNum = kinect.width * kinect.height;
@@ -416,7 +417,7 @@ void arakawaVision::checkDepthUpdated(){
                     break;
 				}
 				if (i > pixNum / 2) {
-					std::cout << "Depth pixels did not updated!!" << endl;
+					ofLog(OF_LOG_VERBOSE, "Depth pixels did not updated!!");
 					kinect.close();
 					kinect.open();
 					kinect.setCameraTiltAngle(angle);
@@ -431,7 +432,7 @@ void arakawaVision::checkDepthUpdated(){
 //--------------------------------------------------------------
 void arakawaVision::exit(){
     kinect.close();
-    std::cout << "Close Kinect and exit"<<endl;
+	ofLog(OF_LOG_VERBOSE, "Close Kinect and exit");
 }
 
 

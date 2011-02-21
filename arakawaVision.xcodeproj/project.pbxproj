@@ -119,6 +119,8 @@
 		16451A1F12E8AC7A007053E1 /* ofxKinectPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16451A1412E8AC79007053E1 /* ofxKinectPlayer.cpp */; };
 		16451A2012E8AC7A007053E1 /* ofxKinectRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16451A1612E8AC79007053E1 /* ofxKinectRecorder.cpp */; };
 		16451A5B12E9C99C007053E1 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16451A5A12E9C99C007053E1 /* SoundPlayer.cpp */; };
+		1683CFBE1312ADD8004C427D /* Courier New.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1683CFBD1312ADC7004C427D /* Courier New.ttf */; };
+		16FE6BE91311AD89003AC4EF /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16FE6A511311AAD9003AC4EF /* icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				162EA01512E6FA2F006B1339 /* GLUT.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16FE6BE61311AD6C003AC4EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				1683CFBE1312ADD8004C427D /* Courier New.ttf in CopyFiles */,
+				16FE6BE91311AD89003AC4EF /* icon.icns in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,9 +216,8 @@
 		161E641012FE73B400D37ECE /* ofxSimpleGuiValueControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiValueControl.h; sourceTree = "<group>"; };
 		1620B3B01311862F00E714AA /* CustomCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCircle.h; sourceTree = "<group>"; };
 		1620B3B11311862F00E714AA /* CustomCircle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomCircle.cpp; sourceTree = "<group>"; };
-		1620B50213119E2A00E714AA /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "arakawaVison-Info.plist"; sourceTree = "<group>"; };
-		162EA01A12E6FA2F006B1339 /* ArakawaVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArakawaVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		162EA01A12E6FA2F006B1339 /* KinectSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinectSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		164519FE12E8AC79007053E1 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
 		164519FF12E8AC79007053E1 /* core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core.c; sourceTree = "<group>"; };
@@ -326,6 +338,8 @@
 		1672EEC112DE5B6400FBC6E6 /* ofxBox2dUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dUtils.h; sourceTree = "<group>"; };
 		1672F1D912DF3C1E00FBC6E6 /* BgEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BgEffect.h; sourceTree = "<group>"; };
 		1672F1DA12DF3C1E00FBC6E6 /* BgEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BgEffect.cpp; sourceTree = "<group>"; };
+		1683CFBD1312ADC7004C427D /* Courier New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier New.ttf"; sourceTree = "<group>"; };
+		16FE6A511311AAD9003AC4EF /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		307525F011CA84AF007EB8FF /* Instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Instructions.txt; sourceTree = "<group>"; };
 		307525F311CA84AF007EB8FF /* ofxThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxThread.cpp; sourceTree = "<group>"; };
 		307525F411CA84AF007EB8FF /* ofxThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxThread.h; sourceTree = "<group>"; };
@@ -561,14 +575,6 @@
 				161E640512FE73B400D37ECE /* ofxSimpleGuiToggle.h */,
 			);
 			path = Controls;
-			sourceTree = "<group>";
-		};
-		1620B4F113119DF800E714AA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1620B50213119E2A00E714AA /* icon.icns */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		164519FB12E8AC79007053E1 /* ofxKinect */ = {
@@ -858,6 +864,15 @@
 				1672EEB512DE5B6400FBC6E6 /* b2RevoluteJoint.h */,
 			);
 			path = Joints;
+			sourceTree = "<group>";
+		};
+		16FE6A501311AAD9003AC4EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1683CFBD1312ADC7004C427D /* Courier New.ttf */,
+				16FE6A511311AAD9003AC4EF /* icon.icns */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		307525EE11CA84AF007EB8FF /* ofxThread */ = {
@@ -1177,13 +1192,13 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
-				1620B4F113119DF800E714AA /* Resources */,
+				16FE6A501311AAD9003AC4EF /* Resources */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E44665C70F5B3E03005D0BF0 /* addons */,
 				E45BE0360E8CC5DE009D7055 /* libs */,
 				162E9F9A12E6F7DA006B1339 /* arakawaVison-Info.plist */,
-				162EA01A12E6FA2F006B1339 /* ArakawaVision.app */,
+				162EA01A12E6FA2F006B1339 /* KinectSpace.app */,
 				162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */,
 			);
 			sourceTree = "<group>";
@@ -1315,23 +1330,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		162E9FB712E6FA2F006B1339 /* arakawaVision */ = {
+		162E9FB712E6FA2F006B1339 /* KinectSpace */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 162EA01612E6FA2F006B1339 /* Build configuration list for PBXNativeTarget "arakawaVision" */;
+			buildConfigurationList = 162EA01612E6FA2F006B1339 /* Build configuration list for PBXNativeTarget "KinectSpace" */;
 			buildPhases = (
 				162E9FBA12E6FA2F006B1339 /* Sources */,
 				162E9FF812E6FA2F006B1339 /* Frameworks */,
 				162EA01312E6FA2F006B1339 /* ShellScript */,
 				162EA01412E6FA2F006B1339 /* CopyFiles */,
+				16FE6BE61311AD6C003AC4EF /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				162E9FB812E6FA2F006B1339 /* PBXTargetDependency */,
 			);
-			name = arakawaVision;
+			name = KinectSpace;
 			productName = myOFApp;
-			productReference = 162EA01A12E6FA2F006B1339 /* ArakawaVision.app */;
+			productReference = 162EA01A12E6FA2F006B1339 /* KinectSpace.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1360,7 +1376,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				162E9FB712E6FA2F006B1339 /* arakawaVision */,
+				162E9FB712E6FA2F006B1339 /* KinectSpace */,
 			);
 		};
 /* End PBXProject section */
@@ -1558,7 +1574,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				PRODUCT_NAME = ArakawaVisionDebug;
+				PRODUCT_NAME = KinectSpaceDebug;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1625,7 +1641,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
-				PRODUCT_NAME = ArakawaVision;
+				PRODUCT_NAME = KinectSpace;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1691,7 +1707,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
-				PRODUCT_NAME = ArakawaVisionUniversal;
+				PRODUCT_NAME = KinectSpaceUniversal;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1825,7 +1841,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		162EA01612E6FA2F006B1339 /* Build configuration list for PBXNativeTarget "arakawaVision" */ = {
+		162EA01612E6FA2F006B1339 /* Build configuration list for PBXNativeTarget "KinectSpace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				162EA01712E6FA2F006B1339 /* Debug */,
