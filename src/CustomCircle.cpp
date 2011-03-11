@@ -10,7 +10,10 @@
 #include "CustomCircle.h"
 
 void CustomCircle::setRandomColor() {
-	fillColor = ofColor(ofRandom(0, 200), ofRandom(180, 255), ofRandom(150, 255));
+	fillColor = ofColor();
+	fillColor.r = ofRandom(0, 200);
+	fillColor.g = ofRandom(180, 255);
+	fillColor.b = ofRandom(150, 255);
 }
 
 void CustomCircle::draw() {
@@ -20,17 +23,20 @@ void CustomCircle::draw() {
 	glPushMatrix();
 	glTranslatef(getPosition().x, getPosition().y, 0);
 	ofFill();
-	ofSetColor(fillColor, 150);
+	ofSetColor(fillColor.r, fillColor.g, fillColor.b, 150);
 	ofCircle(0, 0, radius);
 	ofNoFill();
-	ofSetColor(fillColor, 255);
+	ofSetColor(fillColor.r, fillColor.g, fillColor.b, 255);
 	ofCircle(0, 0, radius);
 	glPopMatrix();
 }
 
 
 void CustomRect::setRandomColor() {
-	fillColor = ofColor(ofRandom(150, 255), ofRandom(0, 200), ofRandom(200, 255));	
+	fillColor = ofColor();
+	fillColor.r = ofRandom(150, 255);
+	fillColor.g = ofRandom(0, 200);
+	fillColor.b = ofRandom(200, 255);	
 }
 
 void CustomRect::draw() {
@@ -50,7 +56,7 @@ void CustomRect::draw() {
 	
 	
 	ofEnableAlphaBlending();
-	ofSetColor(fillColor, 180);
+	ofSetColor(fillColor.r, fillColor.g, fillColor.b, 180);
 	ofFill();
 	ofBeginShape();
 	for (int32 i = 0; i <count; i++) {
@@ -58,7 +64,7 @@ void CustomRect::draw() {
 	}
 	ofEndShape();
 	
-	ofSetColor(fillColor);
+	ofSetColor(fillColor.r, fillColor.g, fillColor.b);
 	ofNoFill();
 	ofBeginShape();
 	for (int32 i = 0; i <count; i++) {
