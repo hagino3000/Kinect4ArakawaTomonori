@@ -1,0 +1,38 @@
+The following people have contributed to libfreenect:
+
+Aditya Gaddam <adityagaddam@gmail.com>
+Andrew <amiller@dappervision.com>
+Antonio Ospite <ospite@studenti.unina.it>
+Brandyn A. White <bwhite@dappervision.com>
+Chris J (cryptk) <cryptk@gmail.com>
+David García Garzón <david.garcia@barcelonamedia.org>
+Dominick D'Aniello <netpro2k@gmail.com>
+Drew Fisher <drew.m.fisher@gmail.com>
+Eric Monti <esmonti@gmail.com>
+Francois Coulombe <fcoulombe@silentfalls.org>
+Hector Martin <hector@marcansoft.com>
+Jochen Kerdels <jochen@kerdels.de>
+Josh Grunzweig <jgrunzweig@gizmotron.local>
+Joshua Blake <joshblake@gmail.com>
+Juan Carlos del Valle <jc.ekinox@gmail.com>
+Kai R <phen@gmx.de>
+Kai Ritterbusch <kai.ritterbusch@gmx.de>
+Kelvie Wong <kelvie@ieee.org>
+Kenneth Johansson <ken@kenjo.org>
+Kyle Machulis <kyle@nonpolynomial.com>
+Marcos Paulo Berteli Slomp <mslomp@gmail.com>
+Mark Renouf <mark.renouf@gmail.com>
+Melonee Wise <mwise@willowgarage.com>
+Peter Kropf <pkropf@gmail.com>
+Radu Bogdan Rusu <rusu@cs.tum.edu>
+Rich Mattes <jpgr87@gmail.com>
+Stephen Sinclair <radarsat1@gmail.com>
+Steven Lovegrove <stevenlovegrove@gmail.com>
+Stéphane Magnenat <stephane@magnenat.net>
+Theo Watson <theo@openframeworks.cc>
+Thomas Roefer <Thomas.Roefer@dfki.de>
+Tim Niemueller <niemueller@kbsg.rwth-aachen.de>
+Tully Foote <tfoote@willowgarage.com>
+Vincent Le Ligeour <yoda-jm@users.sourceforge.net>
+Yaroslav Halchenko <debian@onerussian.com>
+arnebe <arne@alamut.de>

@@ -1,0 +1,21 @@
+This program used following libraries. And license files are placed at Resources directory.
+
+openFrameworks
+
+    http://www.openframeworks.cc/
+
+libfreenect
+
+    Great works by OpenKinect team. https://github.com/OpenKinect/libfreenect
+
+ofxKinect
+
+    https://github.com/ofTheo/ofxKinect
+
+OpenCV
+
+    http://opencv.willowgarage.com/wiki/
+
+
+You can see source files of this program at
+https://github.com/hagino3000/Kinect4ArakawaTomonori

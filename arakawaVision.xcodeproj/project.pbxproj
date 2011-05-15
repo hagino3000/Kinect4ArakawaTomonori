@@ -41,7 +41,6 @@
 		162E9FC512E6FA2F006B1339 /* ofxMatrix4x4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F055FD1293A22200BAAF7C /* ofxMatrix4x4.cpp */; };
 		162E9FC612E6FA2F006B1339 /* ofxQuaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F056021293A22200BAAF7C /* ofxQuaternion.cpp */; };
 		162E9FF712E6FA2F006B1339 /* BgEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1672F1DA12DF3C1E00FBC6E6 /* BgEffect.cpp */; };
-		162E9FF912E6FA2F006B1339 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */; };
 		162E9FFA12E6FA2F006B1339 /* GLee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE0A90E8CC67C009D7055 /* GLee.a */; };
 		162E9FFB12E6FA2F006B1339 /* rtAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE2E30E8CC69C009D7055 /* rtAudio.a */; };
 		162E9FFC12E6FA2F006B1339 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -65,7 +64,6 @@
 		162EA00F12E6FA2F006B1339 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C242CC10CC650E004149E2 /* libfmodex.dylib */; };
 		162EA01012E6FA2F006B1339 /* freeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49DA7BD10CD396F0006B5A8 /* freeimage.a */; };
 		162EA01112E6FA2F006B1339 /* openCV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3077438B11CC21820022444F /* openCV.a */; };
-		162EA01512E6FA2F006B1339 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4C2425F10CC5A78004149E2 /* GLUT.framework */; };
 		16451A1812E8AC79007053E1 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = 164519FE12E8AC79007053E1 /* cameras.c */; };
 		16451A1912E8AC79007053E1 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = 164519FF12E8AC79007053E1 /* core.c */; };
 		16451A1A12E8AC79007053E1 /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = 16451A0412E8AC79007053E1 /* tilt.c */; };
@@ -119,25 +117,16 @@
 		16B64AC2132A7E3D00F7AF4B /* b2PulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B64A8B132A7E3D00F7AF4B /* b2PulleyJoint.cpp */; };
 		16B64AC3132A7E3D00F7AF4B /* b2RevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B64A8D132A7E3D00F7AF4B /* b2RevoluteJoint.cpp */; };
 		16B64AC4132A7E3D00F7AF4B /* ofxBox2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16B64A8F132A7E3D00F7AF4B /* ofxBox2d.cpp */; };
+		16C98F0A137ECD3600C938DC /* openFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C98F09137ECD3600C938DC /* openFrameworks.a */; };
+		16C9935D137EE95700C938DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C9935C137EE95700C938DC /* Security.framework */; };
+		16C9939413800F7200C938DC /* libfreenect_license.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16C9938F138006C000C938DC /* libfreenect_license.txt */; };
+		16C9939513800F7200C938DC /* libfreenect_apache20.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16C993901380083C00C938DC /* libfreenect_apache20.txt */; };
+		16C9939613800F7200C938DC /* libfreenect_contrib.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16C993911380090600C938DC /* libfreenect_contrib.txt */; };
+		16C9939713800F7200C938DC /* openFrameworks_license.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16C9939213800A1200C938DC /* openFrameworks_license.txt */; };
+		16C9939813800F7200C938DC /* opencv_license.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16C9939313800B1C00C938DC /* opencv_license.txt */; };
+		16C9939B1380101900C938DC /* note.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16C9939A13800FF700C938DC /* note.txt */; };
 		16FE6BE91311AD89003AC4EF /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16FE6A511311AAD9003AC4EF /* icon.icns */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		162E9FB912E6FA2F006B1339 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
-			remoteInfo = openFrameworks;
-		};
-		E4C2421D10CC549C004149E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
-			remoteInfo = openFrameworks;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		162EA01412E6FA2F006B1339 /* CopyFiles */ = {
@@ -146,7 +135,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				162EA01512E6FA2F006B1339 /* GLUT.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +144,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				16C9939B1380101900C938DC /* note.txt in CopyFiles */,
+				16C9939413800F7200C938DC /* libfreenect_license.txt in CopyFiles */,
+				16C9939513800F7200C938DC /* libfreenect_apache20.txt in CopyFiles */,
+				16C9939613800F7200C938DC /* libfreenect_contrib.txt in CopyFiles */,
+				16C9939713800F7200C938DC /* openFrameworks_license.txt in CopyFiles */,
+				16C9939813800F7200C938DC /* opencv_license.txt in CopyFiles */,
 				1683CFBE1312ADD8004C427D /* Courier New.ttf in CopyFiles */,
 				16FE6BE91311AD89003AC4EF /* icon.icns in CopyFiles */,
 			);
@@ -216,7 +210,7 @@
 		1620B3B01311862F00E714AA /* CustomCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCircle.h; sourceTree = "<group>"; };
 		1620B3B11311862F00E714AA /* CustomCircle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomCircle.cpp; sourceTree = "<group>"; };
 		162EA01A12E6FA2F006B1339 /* KinectSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinectSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		162EA01C12E6FA2F006B1339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		164519FE12E8AC79007053E1 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
 		164519FF12E8AC79007053E1 /* core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core.c; sourceTree = "<group>"; };
 		16451A0012E8AC79007053E1 /* freenect_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = freenect_internal.h; sourceTree = "<group>"; };
@@ -337,6 +331,14 @@
 		16B64A98132A7E3D00F7AF4B /* ofxBox2dRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dRender.h; sourceTree = "<group>"; };
 		16B64A99132A7E3D00F7AF4B /* ofxBox2dSoftBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dSoftBody.h; sourceTree = "<group>"; };
 		16B64A9A132A7E3D00F7AF4B /* ofxBox2dUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dUtils.h; sourceTree = "<group>"; };
+		16C98F09137ECD3600C938DC /* openFrameworks.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = openFrameworks.a; path = ../../../libs/openFrameworksCompiled/lib/osx/openFrameworks.a; sourceTree = SOURCE_ROOT; };
+		16C9935C137EE95700C938DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		16C9938F138006C000C938DC /* libfreenect_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libfreenect_license.txt; sourceTree = "<group>"; };
+		16C993901380083C00C938DC /* libfreenect_apache20.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libfreenect_apache20.txt; sourceTree = "<group>"; };
+		16C993911380090600C938DC /* libfreenect_contrib.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libfreenect_contrib.txt; sourceTree = "<group>"; };
+		16C9939213800A1200C938DC /* openFrameworks_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openFrameworks_license.txt; sourceTree = "<group>"; };
+		16C9939313800B1C00C938DC /* opencv_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = opencv_license.txt; sourceTree = "<group>"; };
+		16C9939A13800FF700C938DC /* note.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = note.txt; sourceTree = "<group>"; };
 		16FE6A511311AAD9003AC4EF /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		307525F011CA84AF007EB8FF /* Instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Instructions.txt; sourceTree = "<group>"; };
 		307525F311CA84AF007EB8FF /* ofxThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxThread.cpp; sourceTree = "<group>"; };
@@ -399,7 +401,6 @@
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* arakawaVision.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = arakawaVision.cpp; sourceTree = "<group>"; };
 		E4B69E1F0A3A1BDC003C02F2 /* arakawaVision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arakawaVision.h; sourceTree = "<group>"; };
-		E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
@@ -432,7 +433,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				162E9FF912E6FA2F006B1339 /* openFrameworksDebug.a in Frameworks */,
 				162E9FFA12E6FA2F006B1339 /* GLee.a in Frameworks */,
 				162E9FFB12E6FA2F006B1339 /* rtAudio.a in Frameworks */,
 				162E9FFC12E6FA2F006B1339 /* AGL.framework in Frameworks */,
@@ -457,6 +457,8 @@
 				162EA01012E6FA2F006B1339 /* freeimage.a in Frameworks */,
 				162EA01112E6FA2F006B1339 /* openCV.a in Frameworks */,
 				16451A1C12E8AC79007053E1 /* usb-1.0.a in Frameworks */,
+				16C98F0A137ECD3600C938DC /* openFrameworks.a in Frameworks */,
+				16C9935D137EE95700C938DC /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,6 +869,12 @@
 			children = (
 				1683CFBD1312ADC7004C427D /* Courier New.ttf */,
 				16FE6A511311AAD9003AC4EF /* icon.icns */,
+				16C9938F138006C000C938DC /* libfreenect_license.txt */,
+				16C993901380083C00C938DC /* libfreenect_apache20.txt */,
+				16C993911380090600C938DC /* libfreenect_contrib.txt */,
+				16C9939213800A1200C938DC /* openFrameworks_license.txt */,
+				16C9939313800B1C00C938DC /* opencv_license.txt */,
+				16C9939A13800FF700C938DC /* note.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1002,6 +1010,7 @@
 		E45BE0360E8CC5DE009D7055 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				16C98F09137ECD3600C938DC /* openFrameworks.a */,
 				E45BEED60E8CCB34009D7055 /* core */,
 			);
 			name = libs;
@@ -1142,6 +1151,7 @@
 		E45BE5980E8CC70C009D7055 /* core frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16C9935C137EE95700C938DC /* Security.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
 				E4C2424610CC5A17004149E2 /* IOKit.framework */,
@@ -1189,11 +1199,10 @@
 			children = (
 				16FE6A501311AAD9003AC4EF /* Resources */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
-				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E44665C70F5B3E03005D0BF0 /* addons */,
 				E45BE0360E8CC5DE009D7055 /* libs */,
 				162EA01A12E6FA2F006B1339 /* KinectSpace.app */,
-				162EA01C12E6FA2F006B1339 /* openFrameworks-Info.plist */,
+				162EA01C12E6FA2F006B1339 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1215,22 +1224,6 @@
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
-		};
-		E4C2421710CC549C004149E2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E4C2422310CC54B6004149E2 /* openFrameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */,
-			);
-			name = openFrameworks;
-			sourceTree = "<group>";
 		};
 		E4C2425B10CC5A78004149E2 /* glut */ = {
 			isa = PBXGroup;
@@ -1337,7 +1330,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				162E9FB812E6FA2F006B1339 /* PBXTargetDependency */,
 			);
 			name = KinectSpace;
 			productName = myOFApp;
@@ -1362,28 +1354,12 @@
 			mainGroup = E4B69B4A0A3A1720003C02F2;
 			productRefGroup = E4B69B4A0A3A1720003C02F2;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = E4C2421710CC549C004149E2 /* Products */;
-					ProjectRef = E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				162E9FB712E6FA2F006B1339 /* KinectSpace */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = openFrameworksDebug.a;
-			remoteRef = E4C2421D10CC549C004149E2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		162EA01312E6FA2F006B1339 /* ShellScript */ = {
@@ -1496,14 +1472,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		162E9FB812E6FA2F006B1339 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = openFrameworks;
-			targetProxy = 162E9FB912E6FA2F006B1339 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		162EA01712E6FA2F006B1339 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1523,7 +1491,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1551,6 +1519,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
 					"\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"",
+					"\"$(SRCROOT)/../../../libs/openFrameworksCompiled/lib/osx\"",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/freeimage/lib/osx\"";
@@ -1589,7 +1558,7 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1618,6 +1587,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
 					"\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"",
+					"\"$(SRCROOT)/../../../libs/openFrameworksCompiled/lib/osx\"",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/libusb-osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/freeimage/lib/osx\"";
@@ -1656,7 +1626,7 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1685,6 +1655,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
 					"\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"",
+					"\"$(SRCROOT)/../../../libs/openFrameworksCompiled/lib/osx\"",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"$(SRCROOT)/src/ofxKinect/libs/libusb/osx/libs\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/freeimage/lib/osx\"";
@@ -1795,6 +1766,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Takashi Nishibayashi";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;

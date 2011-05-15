@@ -41,6 +41,28 @@ Open Project by xcode
 1. open arakawaVision.xcodeproj
 2. Build and Run
 
+note
+----
+
+This program used following libraries. And license files are placed at Resources directory.
+
+openFrameworks
+
+  http://www.openframeworks.cc/
+
+libfreenect
+
+  Great works by OpenKinect team.  https://github.com/OpenKinect/libfreenect
+
+ofxKinect
+
+  https://github.com/ofTheo/ofxKinect
+
+OpenCV
+
+  http://opencv.willowgarage.com/wiki/
+  
+
   
 Contact
 -------
