@@ -61,6 +61,10 @@ ofxKinect
 OpenCV
 
   http://opencv.willowgarage.com/wiki/
+
+ofxBox2d
+
+  http://code.google.com/p/vanderlin/
   
 
   

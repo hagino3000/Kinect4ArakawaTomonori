@@ -15,6 +15,10 @@ ofxKinect
 OpenCV
 
     http://opencv.willowgarage.com/wiki/
+	
+ofxBox2d
+
+    http://code.google.com/p/vanderlin/
 
 
 You can see source files of this program at
