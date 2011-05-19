@@ -46,26 +46,18 @@ note
 
 This program used following libraries. And license files are placed at Resources directory.
 
-openFrameworks
-
-  http://www.openframeworks.cc/
-
 libfreenect
-
-  Great works by OpenKinect team.  https://github.com/OpenKinect/libfreenect
-
-ofxKinect
-
-  https://github.com/ofTheo/ofxKinect
-
+  Great works by OpenKinect project.  https://github.com/OpenKinect/libfreenect
 OpenCV
-
-  http://opencv.willowgarage.com/wiki/
-
-ofxBox2d
-
-  http://code.google.com/p/vanderlin/
-  
+  via http://opencv.willowgarage.com/wiki/
+openFrameworks 
+  via http://www.openframeworks.cc/
+ofxKinect 
+  via ofTheo(https://github.com/ofTheo/ofxKinect)
+ofxBox2d 
+  via Vanderlin (http://code.google.com/p/vanderlin/)
+ofxSimpeGuiToo 
+  via The Mega Super Awesome Visuals Company
 
   
 Contact
